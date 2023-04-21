@@ -51,7 +51,7 @@ export class AddproductsService {
   deleteCartItems(token: any, itemId: string){
     return this._http.delete(`http://10.8.10.59:4000/deleteCartItem/?itemId=${itemId}`,  { headers: {"Authorization" : `Bearer ${token}`}})
   }
-  logout(data:any){
-    return this._http.post('http://10.8.10.59:4000/users/logout', data)
+  logout(token: any){
+    return this._http.post('http://10.8.10.59:4000/users/logout', { headers: {"Authorization" : `Bearer ${token}`}})
   }
 }

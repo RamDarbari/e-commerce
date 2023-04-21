@@ -17,8 +17,8 @@ export class HeaderComponent {
   onLogout(){
     const user = localStorage.getItem('user')
     try{
-      const data = {user : user}
-      this._product.logout(data).subscribe(()=>{
+      const token = {user : user}
+      this._product.logout(token).subscribe(()=>{
         localStorage.removeItem('user')
         localStorage.removeItem('categoryId')
         this._router.navigate(['/'])

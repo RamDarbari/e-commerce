@@ -3,6 +3,20 @@ body {
   ;
 }
 
+.l-img {
+  height: 700px;
+  background-image: url('https://mobirise.com/extensions/commercem4/assets/images/background53.jpg');
+
+
+  button {
+    font-size: 40px;
+    font-family: sans-serif;
+    color: white;
+    border: 2px solid white;
+  }
+
+}
+
 .card-deck {
   margin: 15px;
 }
@@ -20,11 +34,15 @@ body {
   max-height: 50px;
   font-family: sans-serif;
   margin-bottom: 0.5rem;
+  // padding: 10px;
+  margin-top: 10px;
 }
 
 .card-text {
   margin-bottom: 0.5rem;
   font-size: 1rem;
+  // overflow: hidden;
+  // max-lines: 4;
 }
   
 .btn {

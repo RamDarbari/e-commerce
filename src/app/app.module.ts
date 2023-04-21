@@ -58,7 +58,7 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 3000,
-      positionClass: 'toast-bottom-right',
+      positionClass: 'toast-bottom-left',
       preventDuplicates: true,
     })
     
