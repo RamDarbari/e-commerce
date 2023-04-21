@@ -1,0 +1,9 @@
+<div class="subcategories">
+    <h2 style="color: white; font-size: 40px; margin-top: 20px; text-decoration: underline;" class="d-flex justify-content-center text-center">Sub Categories</h2>
+    <div class="container d-flex" *ngFor="let data of product">
+        <ul>
+            <li> <p  (click)="onClickProducts(data._id)" >{{data.subCategoryName}}</p> </li>  
+            <img class="c-img" src={{data.url}} alt="">
+        </ul>
+    </div>
+</div>

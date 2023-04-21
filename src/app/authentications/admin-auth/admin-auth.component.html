@@ -1,0 +1,81 @@
+<body>
+    <div class="container" *ngIf="!showLogin">
+      <form #sellerLoginForm="ngForm" (ngSubmit)="login(sellerLoginForm.value)" class="common-form">
+  
+        <div class="logo"><a><img src="https://www.bootstrapdash.com/demo/skydash/template/images/logo.svg"
+              alt="Logo"></a></div>
+        <p style="display: flex; justify-content: center; color: red;">{{loginError}}</p>
+        <div class="form-group">
+          <!-- <label for="email" class="form-label">Email*</label> -->
+          <input type="email" class="form-input" id="email" name="emailAddress" ngModel #email="ngModel" required
+            placeholder="Email ">
+          <p class="invalid-input"><span *ngIf="email.invalid && email.touched ">Please enter the email</span></p>
+        </div>
+  
+        <div class="form-group">
+          <!-- <label for="password" class="form-label">Password*</label> -->
+          <input type="password" class="form-input" id="password" name="password" ngModel #password="ngModel"
+            minlength="8" maxlength="25" required placeholder="Password">
+          <p class="invalid-input"><span *ngIf="password.invalid && password.touched ">Please enter the password</span>
+          </p>
+        </div>
+  
+        <div class="form-group">
+          <button type="submit" class="form-button">Log In</button>
+          <p>Don't have an acoount? <a (click)="onSignUp()">Click to Signup</a></p>
+        </div>
+      </form>
+    </div>
+  
+    <!-- signup page  -->
+  
+    <div class="container" *ngIf="showLogin">
+      <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="common-form">
+        <div class="logo"><a><img src="https://www.bootstrapdash.com/demo/skydash/template/images/logo.svg"
+              alt="Logo"></a></div>
+  
+        <div class="form-group">
+          <!-- <label for="name" class="form-label">Name*</label> -->
+          <input type="text" class="form-input" id="name" name="userName" ngModel #name="ngModel" required placeholder="Name">
+          <p class="invalid-input"><span *ngIf="name.invalid && name.touched "> Please enter you name </span></p>
+        </div>
+  
+        <div class="form-group">
+          <!-- <label for="email" class="form-label">Email*</label> -->
+          <input type="email" class="form-input" id="email" name="emailAddress" ngModel #email="ngModel" required
+            placeholder="Email ">
+          <p class="invalid-input"><span *ngIf="email.invalid && email.touched ">Please enter the email</span></p>
+        </div>
+  
+        <div class="form-group">
+          <!-- <label for="phone" class="form-label">Phone*</label> -->
+          <input type="number" class="form-input" id="phone" name="phoneNumber" ngModel #phone="ngModel" required
+            placeholder="Phonenumber">
+          <p class="invalid-input"><span *ngIf="phone.invalid && phone.touched"> Please enter your phone number</span></p>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-input" id="password" name="password" ngModel #password="ngModel" required
+            placeholder="Password">
+          <p class="invalid-input">
+            <span *ngIf="password.invalid && password.touched">Please enter a password</span>
+            <span *ngIf="password.value && !passwordIsValid(password.value)">
+              Password must contain at least one uppercase letter, one symbol, and be at least 8 characters long.
+            </span>
+            <span *ngIf="password.value && hasThreeConsecutiveNumbers(password.value)">Password cannot contain a sequence
+              of 3 or more numbers</span>
+          </p>
+        </div>
+    
+        <div class="form-group">
+          <input type="password" class="form-input" id="password2" name="confirmPassword" ngModel required
+            placeholder="Confirmpassword">
+          <p class="invalid-input"><span *ngIf="passwordsDoNotMatch()"> Passwords do not match.</span></p>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="form-button">Register</button>
+          <p>If you already have a account? <a (click)="onLogin()">Click to Login</a></p>
+        </div>
+      </form>
+    </div>
+  
+  </body>

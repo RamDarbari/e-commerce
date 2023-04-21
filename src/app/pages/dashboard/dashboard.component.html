@@ -1,0 +1,80 @@
+<body>
+    <h2>Welcome {{ loggedInUser?.username }}!</h2>
+    <div class="add-product-container">
+      <h3>Add Product</h3>
+      <p> {{addProductMessage}} </p>
+      <form #addProduct="ngForm" (ngSubmit)="onSubmit(addProduct.value, addProduct)">
+        <div class="form-group">
+          <label for="name">Product Name:</label>
+          <input type="text" id="name" name="name" class="form-control" ngModel required placeholder="EX:T-Shirt">
+        </div>
+        <div class="form-group">
+          <label for="name">Product Brand:</label>
+          <input type="text" id="name" name="brand" class="form-control" ngModel required placeholder="EX:ADIDAS">
+        </div>
+        <div class="form-group">
+          <label for="description">Product Description:</label>
+          <textarea id="description" name="desc" class="form-control" ngModel required
+            placeholder="Describe here!!"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <!-- <div class="input-group-text">$</div> -->
+            </div>
+            <label for="price"></label>
+            <input type="number" id="price" name="price" class="form-control" ngModel required placeholder="$">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" class="form-control" ngModel required placeholder="EX:10">
+        </div>
+        <div class="form-group">
+          <label for="image">Product Image:</label>
+          <div class="input-group">
+            <input type="text" id="image_url" name="image" class="form-control" ngModel placeholder="Enter image URL">
+            <div class="input-group-append">
+              <!-- <button type="button" class="btn btn-secondary" id="use_file">Upload File</button> -->
+            </div>
+          </div>
+          <!-- <input type="file" id="image" name="image" class="form-control-file d-none" ngModel accept="image/*"> -->
+        </div>
+        <button type="submit" class="btn ">Add Product</button>
+      </form>
+    </div>
+  
+    <!-- output table -->
+  
+    <div class="product-table-container">
+      <h3>Product List</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Product Brand</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Image</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productList">
+            <td>{{ product.name }}</td>
+            <td>{{ product.brand }}</td>
+            <td>{{ product. description }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.quantity }}</td>
+            <td><img src="{{ product.image }}" alt="Product Image"></td>
+            <td>
+              <button (click)="editProduct()" class="edit">Edit</button>
+              <button (click)="deleteProduct(product._id)" class="delete">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
