@@ -1,0 +1,24 @@
+
+<!-- <div *ngFor="let items of history">
+    <p>{{items.name}}</p>
+</div> -->
+
+<!-- <button (click)="purchaseHistory()" >purchase-history</button> -->
+
+<div class="history-container">
+    <div *ngFor="let item of history" class="history-item">
+      <div class="history-item__details">
+        <div *ngFor="let elem of item.items" class="history-item__product">
+          <img class="history-item__product-image" src="{{ elem.image }}" alt="{{ elem.name }}">
+          <div class="history-item__product-info">
+            <h4 class="history-item__product-name" style="color: aliceblue;">{{ elem.name }}</h4>
+            <p class="history-item__product-price" style="color: aliceblue;">Price: {{ elem.price }}</p>
+          </div>
+        </div>
+        <div class="history-item__total-bill">
+          <p style="color: aliceblue;">Total Bill: {{ item.totalBill | currency: 'INR' }}</p>
+        </div>
+      </div>
+    </div>
+</div>
+  

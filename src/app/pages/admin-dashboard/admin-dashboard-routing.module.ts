@@ -10,6 +10,7 @@ import { AboutUsComponent } from '../about-us/about-us.component';
 import { ContactUsComponent } from '../contact-us/contact-us.component';
 import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
 import { NotFoundComponent } from 'src/app/authentications/not-found/not-found.component';
+import { PurchaseHistoryComponent } from '../purchase-history/purchase-history.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: 'about-us', component: AboutUsComponent },
     { path: 'contact-us', component: ContactUsComponent },
     { path: 'add-to-cart', component: AddToCartComponent },
+    { path: 'purchase-hitory', component: PurchaseHistoryComponent},
     // { path: 'product-details', component: ProductDetailsComponent },
     {path: '', redirectTo: '/admin/home', pathMatch: 'full'},
     { path: 'home/product-details', redirectTo: '/admin/product-details', pathMatch: 'full' },

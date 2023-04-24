@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA  } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,9 +21,12 @@ import { SubcategoriesComponent } from './pages/subcategories/subcategories.comp
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { AddToCartComponent } from './pages/add-to-cart/add-to-cart.component';
 import { ToastrModule } from 'ngx-toastr';
-import {MatCardModule} from '@angular/material/card';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { AlertsComponent } from './reusable-components/alerts/alerts.component';
+import { CardsComponent } from './reusable-components/cards/cards.component';
+import { PurchaseHistoryComponent } from './pages/purchase-history/purchase-history.component';
 
 
 @NgModule({
@@ -40,9 +43,12 @@ import {MatButtonModule} from '@angular/material/button';
     NotFoundComponent,
     SidebarComponent,
     DashboardComponent,
-   SubcategoriesComponent,
+    SubcategoriesComponent,
     CategoriesComponent,
     AddToCartComponent,
+    AlertsComponent,
+    CardsComponent,
+    PurchaseHistoryComponent
   ],
   imports: [
     MatButtonModule,
@@ -61,7 +67,7 @@ import {MatButtonModule} from '@angular/material/button';
       positionClass: 'toast-bottom-left',
       preventDuplicates: true,
     })
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent],

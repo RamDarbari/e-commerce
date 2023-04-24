@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { AddproductsService } from '../services/addproduct.service';
+import { CardsComponent } from 'src/app/reusable-components/cards/cards.component';
 // import { ProductDetailsComponent } from '../product-details/product-details.component';
 
 
@@ -21,14 +22,10 @@ export class HomeComponent implements OnInit {
   
   constructor(private _product: AddproductsService, private _elementRef: ElementRef, private _route: Router, private toastr: ToastrService) { }
 
-
-
   ngOnInit(): void {
     this.getProducts();
   }
-
   
-
   getProducts() {
     try {
       this._product.productList().subscribe((result) => {
@@ -39,7 +36,6 @@ export class HomeComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-
   }
   scrollToProducts(): void {
     const productsTop = this._elementRef.nativeElement.querySelector('#products').offsetTop;
@@ -48,43 +44,5 @@ export class HomeComponent implements OnInit {
       behavior: "smooth"
     });
   }
-
-
-
-  addToCart(itemId: string) {
-    let quantity : number =  Number((<HTMLInputElement>document.getElementById(itemId)).value);
-    try {
-      let userInfo = localStorage.getItem("user")
-      let { token } = JSON.parse(userInfo!)
-      // console.log(itemId, quantity)
-      let data = { itemId: itemId, quantity: quantity }
-      this._product.addToCart(data, token)
-        .subscribe(res => {
-          console.log(res);
-          // alert('added succesfully')
-          this.toastr.success('Product added succesfully')
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-
-  increaseQuantity(_id: string) {
-   let a : number =  Number((<HTMLInputElement>document.getElementById(_id)).value);
-    a=a+1;
-    let x: number =a;
-   (<HTMLInputElement>document.getElementById(_id)).value = x.toString();
-  }
-
-  decreaseQuantity(_id: string) {
-    let a : number =  Number((<HTMLInputElement>document.getElementById(_id)).value);
-    if(a>1){
-    a=a-1;
-    let x: number =a;
-   (<HTMLInputElement>document.getElementById(_id)).value = x.toString();}
-  }
-   
-
 }
 

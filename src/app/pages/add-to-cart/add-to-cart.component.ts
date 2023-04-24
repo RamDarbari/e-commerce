@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddproductsService } from '../services/addproduct.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -10,7 +11,8 @@ import { AddproductsService } from '../services/addproduct.service';
 })
 export class AddToCartComponent implements OnInit {
   cartList: any
-  constructor(private _product: AddproductsService, private _route: Router) { }
+  checkOutMessage: any
+  constructor(private _product: AddproductsService, private _route: Router, private _toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getCartItems();
@@ -21,9 +23,6 @@ export class AddToCartComponent implements OnInit {
       let { token } = JSON.parse(userInfo!);
       this._product.getCart(token).subscribe(result => {
         this.cartList = result;
-        // if (this.cartList.length === 0) {
-        //   this._route.navigate(['/admin']);
-        // }
       });      
     } catch (error) {
       console.log(error);
@@ -44,6 +43,23 @@ export class AddToCartComponent implements OnInit {
         console.log(error);
     }
   }
+  checkout(){
+    try{
+      let userInfo = localStorage.getItem("user");
+      let { token } = JSON.parse(userInfo!)
+      this._product.checkOut(token).subscribe((result) => {
+        this.cartList = []; // Clear the productList array
+        this.checkOutMessage = result;
+        this.getCartItems()
+        console.log(result);
+        this._route.navigate(['/admin']);
+        this._toastr.success(result.thankYouMessage);
+      });
+    }catch(error){
+      console.log(error);
+    }
+  }
+
   
 }
 

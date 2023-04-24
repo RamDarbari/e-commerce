@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
 
 
 
@@ -27,6 +28,7 @@ import { AppRoutingModule } from '../app-routing.module';
     AboutUsComponent,
     ContactUsComponent,
     AddToCartComponent,
+    PurchaseHistoryComponent,
     // HeaderComponent,
     // FooterComponent,
     // SidebarComponent

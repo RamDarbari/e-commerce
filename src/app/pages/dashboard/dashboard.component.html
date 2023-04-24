@@ -70,8 +70,9 @@
             <td>{{ product.quantity }}</td>
             <td><img src="{{ product.image }}" alt="Product Image"></td>
             <td>
-              <button (click)="editProduct()" class="edit">Edit</button>
-              <button (click)="deleteProduct(product._id)" class="delete">Delete</button>
+              <!-- <button (click)="editProduct()" class="edit">Edit</button> -->
+              <!-- <button (click)="deleteProduct(product._id)" class="delete">Delete</button> -->
+              <button class="delete" (click)="deleteProduct(product._id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
             </td>
           </tr>
         </tbody>

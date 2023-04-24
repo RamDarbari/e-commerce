@@ -13,10 +13,15 @@ export class AddproductsService {
   subCategoryId: any | null;
   product : any | null
   cartList: any | null
-  
+
+  api: any | null
 
   constructor(private _http: HttpClient) {
+    let api = "http://10.8.10.59:4000"
   }
+
+ 
+
   addProduct(data: product) {
     return this._http.post('http://10.8.10.244:3000/product/addproduct', data);
   }
@@ -53,5 +58,11 @@ export class AddproductsService {
   }
   logout(token: any){
     return this._http.post('http://10.8.10.59:4000/users/logout', { headers: {"Authorization" : `Bearer ${token}`}})
+  }
+  checkOut(token: any): Observable<any>{
+    return this._http.get('http://10.8.10.59:4000/cart/checkout', { headers: {"Authorization" : `Bearer ${token}`}})
+  }
+  purchaseHistory(token: any): Observable<any>{
+    return this._http.get('http://10.8.10.59:4000/purchasedHistory', { headers: {"Authorization" : `Bearer ${token}`}})
   }
 }
