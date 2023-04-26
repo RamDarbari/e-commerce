@@ -1,35 +1,12 @@
-body {
-    background-color: #232227;
-    ;
-  }
-  
-  .l-img {
-    height: 700px;
-    background-image: url('https://mobirise.com/extensions/commercem4/assets/images/background53.jpg');
-  
-  
-    button {
-      font-size: 40px;
-      font-family: sans-serif;
-      color: white;
-      border: 2px solid white;
+    .card {
+      background-color: white;
+      flex: 0 0 calc(25% - 1rem);
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-  
-  }
-  
-  .card-deck {
-    margin: 15px;
-  }
-  
-  .card {
-    background-color: white;
-    flex: 0 0 calc(25% - 1rem);
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
+    
   .card-title {
     max-height: 50px;
     font-family: sans-serif;

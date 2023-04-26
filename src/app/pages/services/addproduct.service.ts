@@ -65,4 +65,7 @@ export class AddproductsService {
   purchaseHistory(token: any): Observable<any>{
     return this._http.get('http://10.8.10.59:4000/purchasedHistory', { headers: {"Authorization" : `Bearer ${token}`}})
   }
+  topSellingProduct(){
+    return this._http.get('http://10.8.10.59:4000/items/topSellingProduct')
+  }
 }

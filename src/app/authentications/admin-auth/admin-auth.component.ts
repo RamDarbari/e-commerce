@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { login, signUp } from 'src/app/data';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -13,11 +14,12 @@ import { login, signUp } from 'src/app/data';
 export class AdminAuthComponent implements OnInit {
   constructor(
     private _admin: AuthService,
-    private _router: Router
+    private _router: Router,
+    private _taostr: ToastrService
   ) { }
   sellerSignUp!: NgForm;
   showLogin = false;
-  loginError: string = '';
+  loginError: any;
 
   ngOnInit() {
     this._admin.reloadSeller();
@@ -40,7 +42,7 @@ export class AdminAuthComponent implements OnInit {
     if (this._admin.isLogginFailed) {
       this._admin.isLogginFailed.subscribe((isError) => {
         if (isError) {
-          this.loginError = 'Email or password is not correct';
+          this.loginError = this._taostr.error('Email or Password in not Correct')
         }
       });
     }

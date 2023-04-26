@@ -1,6 +1,14 @@
 body {
   background-color: #232227;
-  ;
+
+  h2 {
+    color: white;
+    font-size: 40px;
+    margin-top: 8%;
+    text-decoration: underline;
+    width: 86%;
+    float: right;
+  }
 }
 
 .l-img {
@@ -19,6 +27,8 @@ body {
 
 .card-deck {
   margin: 15px;
+  width: 86%;
+  float: right;
 }
 
 .card {
@@ -44,7 +54,7 @@ body {
   // overflow: hidden;
   // max-lines: 4;
 }
-  
+
 .btn {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
@@ -90,8 +100,9 @@ body {
     }
   }
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
