@@ -1,0 +1,10 @@
+<body>
+    <h2  class="d-flex justify-content-center text-center">Products</h2>
+        <section id="products">
+            <div class="card-deck d-flex flex-wrap justify-content-evenly m-15">
+                <mat-card class="card" *ngFor="let product of productList">
+                <app-cards [products]="product"></app-cards>
+                </mat-card>
+            </div>
+        </section>
+</body>

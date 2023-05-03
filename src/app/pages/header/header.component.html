@@ -1,0 +1,42 @@
+<header>
+  <div class="container1">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="left">
+        <div class="logo">
+          <a routerLink="/">
+            <img src="https://www.bootstrapdash.com/demo/skydash/template/images/logo-light.svg" alt="LOGO">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex justify-content-between align-items-center right ">
+        <div class="search-bar d-flex align-items-center">
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="d-flex justify-content-between align-items-center" style="margin-right: 20px;">
+        <div class="dropdown">
+          <a class="dropdown-toggle" href="#" role="button" id="userDropdown" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img src="https://preview.colorlib.com/theme/fashe/images/icons/icon-header-01.png.webp" alt="User Avatar">
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="userDropdown">
+            <a class="dropdown-item"><i class="fa fa-user" aria-hidden="true"></i>Profile</a>
+            <a class="dropdown-item" routerLink="purchase-hitory"><i class="fa fa-history" aria-hidden="true"></i>History</a>
+            <a class="dropdown-item" (click)="onLogout()"><i class="fa fa-power-off" aria-hidden="true"></i>Logout</a>
+          </div>
+        </div>
+        <span class="m-2">|</span>
+        <button class="cart-btn d-flex justify-content-between" (click)="clickToGetCart()"
+          style="background-color: #151419; border: 1px; color: white;" routerLink="./add-to-cart">
+          <img src="https://preview.colorlib.com/theme/fashe/images/icons/icon-header-02.png.webp" alt="IMG">
+          <div style="font-size: 10px;" class="badge bg-danger">5</div>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

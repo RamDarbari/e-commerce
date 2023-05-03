@@ -1,0 +1,88 @@
+header {
+    background-color: #151419;
+    color: #ffffff;
+    height: 80px;
+    width: 100%;
+    box-sizing: inherit;
+
+    .container1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding: 0 20px;
+        margin: 0;
+
+        .logo img {
+            height: 40px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #232227;
+            // border: 1px solid #ccc;
+            // border-radius: 5px;
+            padding: 5px;
+            margin-bottom: 10px;
+            width: 640px;
+
+            input[type="text"] {
+                border: none;
+                color: #ffffff;
+                outline: none;
+                background-color: transparent;
+                width: 100%;
+                font-size: 16px;
+                padding: 5px;
+            }
+        }
+
+        .dropdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+
+            .dropdown-toggle {
+                color: grey;
+                // margin:0 auto;
+                // padding: auto;
+
+                img {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    // margin-right: 8px;
+                }
+            }
+
+
+            .dropdown-menu {
+                width: 30px;
+                background-color: #232227;
+
+                .dropdown-item {
+                    color: white;
+                    margin-bottom: 0;
+                    padding: 0.687rem 1.562rem;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+
+                    &:hover {
+                        background: #1e1e2f;
+                    }
+
+                    i {
+                        font-size: 17px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+    }
+}

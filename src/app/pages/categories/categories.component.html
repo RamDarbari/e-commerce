@@ -1,0 +1,10 @@
+<div class="categories">
+    <h2 class="d-flex justify-content-center text-center">Categories</h2>
+    <div class="container d-flex" *ngFor="let category of categoriesList">
+        <ul>
+            <li (click)="onClickCategories(category._id)"> <p style="color: white; cursor: pointer;">{{category.categoryName}}</p> </li>  
+            <img class="c-img" src={{category.url}} alt="">
+        </ul>
+    </div>
+</div>
+
