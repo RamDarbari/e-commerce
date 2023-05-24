@@ -13,8 +13,10 @@ export interface login {
     password: number;
 }
 
-export interface admin {
-    name: string
+export interface User {
+    id : string,
+    userName : string,
+    image: string
 }
 
 export interface product {

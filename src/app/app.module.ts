@@ -29,6 +29,7 @@ import { CardsComponent } from './reusable-components/cards/cards.component';
 import { PurchaseHistoryComponent } from './pages/purchase-history/purchase-history.component';
 import { CarousalComponent } from './reusable-components/carousal/carousal.component';
 import { TopSellingComponent } from './reusable-components/top-selling/top-selling.component';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { TopSellingComponent } from './reusable-components/top-selling/top-selli
       timeOut: 3000,
       positionClass: 'toast-bottom-left',
       preventDuplicates: true,
-    })
+    }),
+    StoreModule.forRoot({ auth: authReducer }),
 
   ],
   providers: [],
