@@ -14,7 +14,7 @@ export const LoginSuccess = createAction(
 export const LoginFailure = createAction(
     '[Auth] Login Failure',
     props<{ error: string }>()
-  );
+);
 
 export const signup = createAction(
     "[Auth] Sign Up",
@@ -24,5 +24,9 @@ export const signup = createAction(
 export const signUpSuccess = createAction(
     "[Auth] Sign Up Success",
     props<{ user: User }>()
-)
+);
+export const signUpFailure = createAction(
+    '[Auth] Sign Up Failure',
+    props<{ error: string }>()
+);
 

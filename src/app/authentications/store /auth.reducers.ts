@@ -16,6 +16,15 @@ export const authReducer = createReducer(
         error
       })),
 
-        
+    on(AuthActions.signUpSuccess,(state,{user}) =>({
+        ...state,
+        isAuthenticated:true,
+        user
+    })),
+
+    on(AuthActions.signUpFailure,(state,{error}) =>({
+        ...state,
+        error
+        }))
 
 )

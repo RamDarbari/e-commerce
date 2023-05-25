@@ -30,6 +30,9 @@ import { PurchaseHistoryComponent } from './pages/purchase-history/purchase-hist
 import { CarousalComponent } from './reusable-components/carousal/carousal.component';
 import { TopSellingComponent } from './reusable-components/top-selling/top-selling.component';
 import { StoreModule } from '@ngrx/store';
+import { authReducer } from './authentications/store /auth.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './authentications/store /auth.effects';
 
 
 @NgModule({
@@ -72,7 +75,8 @@ import { StoreModule } from '@ngrx/store';
       positionClass: 'toast-bottom-left',
       preventDuplicates: true,
     }),
-    StoreModule.forRoot({ auth: authReducer }),
+    StoreModule.forRoot({ auth: authReducer  }),
+    EffectsModule.forRoot([AuthEffects])
 
   ],
   providers: [],
